@@ -11,7 +11,7 @@ class ApiController extends Controller
     //     return response()->json(["data" => $data, "code" => $statusCode, $headers]);
     // }
 
-    protected function apiResponse($data = [], $message = "succes", $statusCode = 200)
+    protected function apiResponse($data = [], $message = "success", $statusCode = 200)
     {
         $responseStructure = [
             "data" => $data,
