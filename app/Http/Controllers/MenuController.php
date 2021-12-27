@@ -32,7 +32,7 @@ class MenuController extends ApiController
             $menuName = 'sidebar menu';
         }
         $menus = new GetSidebarMenu();
-        return $this->apiResponse($menus->get($roles, $menuName));
+        return $this->api_respond($menus->get($roles, $menuName));
     }
 
     public function getMenus(Request $request){
@@ -40,6 +40,6 @@ class MenuController extends ApiController
         $roles = DB::table('users')->select('menuroles')->where('email', '=', $email)->value('roles');
         $menus = new GetSidebarMenu();
         $menuName = 'sidebar menu';
-        return $this->apiResponse($menus->get($roles, $menuName));
+        return $this->api_respond($menus->get($roles, $menuName));
     }
 }

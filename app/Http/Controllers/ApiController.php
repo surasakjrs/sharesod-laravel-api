@@ -11,7 +11,7 @@ class ApiController extends Controller
     //     return response()->json(["data" => $data, "code" => $statusCode, $headers]);
     // }
 
-    protected function apiResponse($data = [], $message = "success", $statusCode = 200)
+    protected function api_respond($data = [], $message = "success", $statusCode = 200)
     {
         $responseStructure = [
             "data" => $data,
@@ -37,7 +37,7 @@ class ApiController extends Controller
         return $this->respond(null, 204);
     }
 
-    protected function respondError($message, $statusCode)
+    protected function respondError($message, $statusCode = 404)
     {
         return response()->json([
             'error' => [
