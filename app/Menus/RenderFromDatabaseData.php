@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Menus;
-
 use App\Menus\MenuBuilder;
 
 class RenderFromDatabaseData{

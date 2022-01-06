@@ -12,7 +12,7 @@ class GetSidebarMenu implements MenuInterface
     private $menu;
 
     public function __construct(){
-        print_r('test');exit;
+        print_r(new MenuBuilder());exit;
         $this->mb = new MenuBuilder();
     }
 
