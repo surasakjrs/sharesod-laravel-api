@@ -1,7 +1,11 @@
 <?php
+/*
+*   08.11.2019
+*   RenderFromDatabaseData
+*/
 
-namespace App\Menus;
-use App\Menus\MenuBuilder;
+namespace App\MenuBuilder;
+use App\MenuBuilder\MenuBuilder;
 
 class RenderFromDatabaseData{
 
