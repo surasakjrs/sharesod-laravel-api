@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Menus\GetSidebarMenu;
+use App\Http\Menus\GetSidebarMenu;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\TryCatch;
 use App\Models\User;
