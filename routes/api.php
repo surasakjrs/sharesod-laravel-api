@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
+
 Route::name('api.')->group(function () {
     Route::get('menu', [MenuController::class, 'index'])->name('index');
     Route::post('menu', [MenuController::class, 'getMenus'])->name('getMenus');
