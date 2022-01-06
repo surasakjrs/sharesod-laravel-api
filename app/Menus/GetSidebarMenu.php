@@ -2,8 +2,8 @@
 
 namespace App\Menus;
 
-use App\Menus\Menubuilder\Menubuilder;
-use App\Menus\MenuBuilder\RenderFromDatabaseData;
+use App\Menus\Menubuilder;
+use App\Menus\RenderFromDatabaseData;
 use App\Models\Menus;
 
 class GetSidebarMenu implements MenuInterface

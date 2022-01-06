@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Menus\MenuBuilder;
+namespace App\Menus;
 
 class MenuBuilder
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Menus\MenuBuilder;
+namespace App\Menus;
 
-use App\Menus\MenuBuilder\MenuBuilder;
+use App\Menus\MenuBuilder;
 
 class RenderFromDatabaseData{
 
