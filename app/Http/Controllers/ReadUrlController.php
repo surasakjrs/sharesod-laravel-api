@@ -58,6 +58,7 @@ class ReadUrlController extends ApiController
             $str = trim(preg_replace('/\s+/', ' ', $str));
             preg_match("/\<article (.*?)\>(.*)<\/article>/i", $str, $article);
 
+            header('Content-Type: text/html; charset=utf-8');
             echo $article[2];
 
             //return $this->api_respond($article[2]);
