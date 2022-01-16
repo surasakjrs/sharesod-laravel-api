@@ -28,13 +28,32 @@ class ReadUrlController extends ApiController
         }
     }
 
+    public function file_get_contents_curl($url)
+    {
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        return $data;
+
+    }
+
     public function read_url_article(Request $req)
     {
         $url = $req->input('url');
         if (!$url) {
             return $this->respondNoContent();
         }
-        $str = file_get_contents($url);
+        $str = $this->file_get_contents_curl($url);
+        //$str = file_get_contents($url);
         if (strlen($str) > 0) {
             $str = trim(preg_replace('/\s+/', ' ', $str));
             preg_match("/\<article (.*?)\>(.*)<\/article>/i", $str, $article);
