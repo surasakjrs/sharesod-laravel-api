@@ -1,29 +1,31 @@
 <?php
+/*
+*   07.11.2019
+*   MenusMenu.php
+*/
+namespace App\Http\Menus;
 
-namespace App\Menus;
-
-use App\Menus\Menubuilder\Menubuilder;
-use App\Menus\MenuBuilder\RenderFromDatabaseData;
+use App\MenuBuilder\MenuBuilder;
+use Illuminate\Support\Facades\DB;
 use App\Models\Menus;
+use App\MenuBuilder\RenderFromDatabaseData;
 
-class GetSidebarMenu implements MenuInterface
-{
-    private $mb;
+class GetSidebarMenu implements MenuInterface{
+
+    private $mb; //menu builder
     private $menu;
 
     public function __construct(){
         $this->mb = new MenuBuilder();
     }
 
-    private function getMenuFromDB($menuName, $role)
-    {
+    private function getMenuFromDB($menuName, $role){
         $this->menu = Menus::join('menu_role', 'menus.id', '=', 'menu_role.menus_id')
             ->join('menulist', 'menulist.id', '=', 'menus.menu_id')
             ->select('menus.*')
             ->where('menulist.name', '=', $menuName)
             ->where('menu_role.role_name', '=', $role)
-            ->orderBy('menus.sequence', 'asc')
-            ->get();
+            ->orderBy('menus.sequence', 'asc')->get();       
     }
 
     private function getGuestMenu($menuName){
