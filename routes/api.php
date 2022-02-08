@@ -13,6 +13,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReadUrlController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\Sharesod\PinController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('api.')->group(function () {
     Route::get('example', [ExampleController::class, 'index'])->name('index');
+    Route::get('/sharesod/pin', [PinController::class, 'getPins'])->name('getPins');
 
     Route::get('menu', [MenuController::class, 'index'])->name('index');
     Route::post('menu', [MenuController::class, 'getMenus'])->name('getMenus');
